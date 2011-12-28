@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Bluetooth Sample</string>
+    <string name="label_discover_devices">Discover Devices</string>
+    <string name="label_list_of_devices">List of devices</string>
+    <string name="label_scan">Scan</string>
+
+</resources>
