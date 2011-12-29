@@ -1,4 +1,9 @@
 ### A sample project showing how to work with Bluetooth on Android.
 
+*This is a part of a series of posts in which I will put forward a full working app what uses 
+bluetooth on your Android device to discover, connect, pair, send and receive files. 
+The source code would be tagged with each part of this series.*
+
 #### Part 1: Discovering and showing available devices.
+**The app should be able to discover and list out the devices (paired/unpaired).**
 [Bluetooth on Android - Part 1](http://techdroid.kbeanie.com/2011/12/bluetooth-on-android-part-i.html)
