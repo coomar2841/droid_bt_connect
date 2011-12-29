@@ -6,4 +6,5 @@ The source code would be tagged with each part of this series.*
 
 #### Part 1: Discovering and showing available devices.
 **The app should be able to discover and list out the devices (paired/unpaired).**
+
 [Bluetooth on Android - Part 1](http://techdroid.kbeanie.com/2011/12/bluetooth-on-android-part-i.html)
