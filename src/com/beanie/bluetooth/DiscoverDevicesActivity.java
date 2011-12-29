@@ -1,6 +1,5 @@
 package com.beanie.bluetooth;
 
-import java.util.ArrayList;
 import java.util.Set;
 
 import android.app.Activity;
