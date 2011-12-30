@@ -2,7 +2,8 @@
     android:id="@+id/linearLayout1"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:orientation="vertical" >
+    android:orientation="vertical"
+    android:padding="5dip" >
 
     <LinearLayout
         android:id="@+id/linearLayout2"
@@ -14,6 +15,8 @@
             android:id="@+id/imageViewPairStatus"
             android:layout_width="45dip"
             android:layout_height="45dip"
+            android:contentDescription="@string/app_name"
+            android:scaleType="fitCenter"
             android:src="@drawable/bluetooth_bonding" />
 
         <TextView
@@ -26,5 +29,19 @@
             android:textSize="17dip"
             android:textStyle="bold" />
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/textViewStatus"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/label_status"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+    
+    <TextView
+        android:id="@+id/textViewAddress"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/label_status"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
 
 </LinearLayout>

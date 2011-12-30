@@ -40,6 +40,24 @@ public class DeviceDetailsActivity extends Activity {
 			imageViewPairStatus.setImageResource(R.drawable.bluetooth_bonding);
 			break;
 		}
+
+		TextView textViewStatus = (TextView) findViewById(R.id.textViewStatus);
+		switch (device.getBondState()) {
+		case BluetoothDevice.BOND_BONDED:
+			textViewStatus.setText(R.string.label_status_bonded);
+			break;
+		case BluetoothDevice.BOND_BONDING:
+			textViewStatus.setText(R.string.label_status_bonding);
+			break;
+		case BluetoothDevice.BOND_NONE:
+			textViewStatus.setText(R.string.label_status_not_bonded);
+			break;
+		}
+
+		TextView textViewAddress = (TextView) findViewById(R.id.textViewAddress);
+		textViewAddress.setText(getResources().getString(
+				R.string.label_device_address)
+				+ " " + device.getAddress());
 	}
 
 }
