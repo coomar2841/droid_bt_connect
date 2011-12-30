@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class DevicesAdapter extends BaseAdapter {
@@ -47,11 +48,39 @@ public class DevicesAdapter extends BaseAdapter {
 		TextView textViewDeviceName = (TextView) convertView
 				.findViewById(R.id.textViewDeviceName);
 
+		ImageView imageViewPairStatus = (ImageView) convertView
+				.findViewById(R.id.imageViewPairStatus);
+		switch (device.getBondState()) {
+		case BluetoothDevice.BOND_NONE:
+			imageViewPairStatus
+					.setImageResource(R.drawable.bluetooth_notpaired);
+			break;
+		case BluetoothDevice.BOND_BONDED:
+			imageViewPairStatus.setImageResource(R.drawable.bluetooth_paired);
+			break;
+		case BluetoothDevice.BOND_BONDING:
+			imageViewPairStatus.setImageResource(R.drawable.bluetooth_bonding);
+			break;
+		}
+
 		textViewDeviceName.setText(device.getName());
+		
+		convertView.setTag(device);
 		return convertView;
 	}
 
 	public void addDevice(BluetoothDevice device) {
+		int index = -1;
+		int count = 0;
+		for (BluetoothDevice temp : devices) {
+			if (temp.getAddress().equals(device.getAddress())) {
+				index = count;
+			}
+			count++;
+		}
+		if (index != -1) {
+			devices.remove(index);
+		}
 		devices.add(device);
 	}
 

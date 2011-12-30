@@ -5,9 +5,9 @@
 
     <ImageView
         android:id="@+id/imageViewPairStatus"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/ic_launcher" />
+        android:layout_width="45dip"
+        android:layout_height="45dip"
+        android:src="@drawable/bluetooth_notpaired" />
 
     <TextView
         android:id="@+id/textViewDeviceName"

@@ -21,6 +21,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".DiscoverDevicesActivity"></activity>
+        <activity android:name=".DeviceDetailsActivity"></activity>
     </application>
 
 </manifest>

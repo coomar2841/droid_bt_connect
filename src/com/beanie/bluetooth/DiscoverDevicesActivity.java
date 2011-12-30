@@ -13,10 +13,13 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Button;
 import android.widget.ListView;
 
-public class DiscoverDevicesActivity extends Activity {
+public class DiscoverDevicesActivity extends Activity implements
+		OnItemClickListener {
 
 	private final static String TAG = "DiscoverDevicesActivity";
 
@@ -52,6 +55,7 @@ public class DiscoverDevicesActivity extends Activity {
 		ListView listViewDevices = (ListView) findViewById(R.id.listViewDevices);
 		adapter = new DevicesAdapter(this);
 		listViewDevices.setAdapter(adapter);
+		listViewDevices.setOnItemClickListener(this);
 	}
 
 	private void startDiscovery() {
@@ -119,7 +123,9 @@ public class DiscoverDevicesActivity extends Activity {
 	@Override
 	protected void onPause() {
 		super.onPause();
-		bluetoothAdapter.cancelDiscovery();
+		if (bluetoothAdapter != null) {
+			bluetoothAdapter.cancelDiscovery();
+		}
 		try {
 			unregisterReceiver(devicesReceiver);
 		} catch (Exception e) {
@@ -132,10 +138,11 @@ public class DiscoverDevicesActivity extends Activity {
 		@Override
 		public void onReceive(Context context, Intent intent) {
 			String action = intent.getAction();
+			Log.i(TAG, "BC Recieved action: " + action);
 			// When discovery finds a device
 			if (BluetoothDevice.ACTION_FOUND.equals(action)) {
 				Log.i(TAG, "Device found");
-				
+
 				// Get the BluetoothDevice object from the Intent
 				BluetoothDevice device = intent
 						.getParcelableExtra(BluetoothDevice.EXTRA_DEVICE);
@@ -147,5 +154,18 @@ public class DiscoverDevicesActivity extends Activity {
 
 		}
 	};
+
+	@Override
+	public void onItemClick(AdapterView<?> adapterView, View view, int postion,
+			long index) {
+		BluetoothDevice device = (BluetoothDevice) view.getTag();
+		showDeviceDetailsActivity(device);
+	}
+
+	private void showDeviceDetailsActivity(BluetoothDevice device) {
+		Intent intent = new Intent(this, DeviceDetailsActivity.class);
+		intent.putExtra("device", device);
+		startActivity(intent);
+	}
 
 }
