@@ -10,5 +10,8 @@
     <string name="label_status_not_bonded">Status: Not paired</string>
     <string name="label_status_bonding">Status: Pairing</string>
     <string name="label_device_address">Device address: </string>
-
+	<string name="label_cancel">Cancel</string>
+	<string name="label_pair">Pair</string>
+	<string name="label_unpair">Unpair</string>
+	<string name="label_device_class">Device class</string>
 </resources>

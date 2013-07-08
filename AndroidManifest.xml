@@ -5,23 +5,32 @@
     android:versionName="1.0" >
 
     <uses-sdk android:minSdkVersion="8" />
-    <uses-permission android:name="android.permission.BLUETOOTH"/>
-    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
 
     <application
         android:icon="@drawable/ic_launcher"
-        android:label="@string/app_name" >
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
         <activity
             android:name=".HomeActivity"
-            android:label="@string/app_name" >
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".DiscoverDevicesActivity"></activity>
-        <activity android:name=".DeviceDetailsActivity"></activity>
+        <activity
+            android:name=".DiscoverDevicesActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".DeviceDetailsActivity"
+            android:screenOrientation="portrait" >
+        </activity>
     </application>
 
 </manifest>

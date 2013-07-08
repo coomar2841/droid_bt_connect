@@ -58,6 +58,10 @@ public class DeviceDetailsActivity extends Activity {
 		textViewAddress.setText(getResources().getString(
 				R.string.label_device_address)
 				+ " " + device.getAddress());
+		
+		TextView textViewClass = (TextView)findViewById(R.id.textViewClass);
+		String deviceClass = getResources().getString(R.string.label_device_class);
+		textViewClass.setText(deviceClass + " : "+Integer.toString(device.getBluetoothClass().getMajorDeviceClass()));
 	}
 
 }
