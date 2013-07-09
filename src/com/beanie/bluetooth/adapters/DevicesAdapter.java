@@ -1,6 +1,11 @@
-package com.beanie.bluetooth;
+package com.beanie.bluetooth.adapters;
 
 import java.util.ArrayList;
+
+import com.beanie.bluetooth.R;
+import com.beanie.bluetooth.R.drawable;
+import com.beanie.bluetooth.R.id;
+import com.beanie.bluetooth.R.layout;
 
 import android.bluetooth.BluetoothDevice;
 import android.content.Context;

@@ -3,6 +3,8 @@ package com.beanie.bluetooth;
 
 import java.util.Set;
 
+import com.beanie.bluetooth.adapters.DevicesAdapter;
+
 import android.app.Activity;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
